@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<head>
+	<title>Главная страница</title>
+	<meta charset="UTF-8">
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'> 
+	<link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		@import url(LENZGX.css);
+		*
+		{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body .container
+		{
+			max-width: 100%;
+			margin:0 auto;
+		}
+		body
+		{
+			background-image: url(violet/BGTry.png);
+			background-color: #353535;
+		}
+		.top-header
+		{
+
+			display: flex; 
+			justify-content: space-between;
+			align-items: center;
+			padding: 5px 100px;
+			color: #fff;
+			background-color: #202020;
+			position: fixed;
+			width: 100%;
+			z-index: 1;
+			box-shadow: 0px 0px 35px rgba(0,0,0,0.3);
+		}
+		.header-left
+		{
+			display: flex; 
+			justify-content: space-between;
+			font: bold 34px 'Oswald';
+			user-select: none;
+			color: #ffffff;
+			width: auto;
+			height: 50px;
+		}
+            .header-center ul
+            {
+                list-style: none;
+                margin: -10px -480px;
+                position: absolute;
+            }
+            .header-center ul li
+            {
+                display: inline-block;
+                margin: 0 20px;
+            }
+
+		.header-center ul li a
+		{
+			text-decoration: none;
+			color: #fff;
+			cursor: pointer;
+			font-weight: :bold;
+			font: bold 18px "Ubuntu";
+			background-color: #202020;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			padding-left: 25px;
+			padding-right: 25px;
+			transition-property: background-color;
+			transition-duration: 0.1s;
+			transition-timing-function: ease-in-out;
+		}
+
+
+
+		.header-center ul li a:hover
+		{
+			background-color: #353535;
+		}
+		.top-header a div.header-left:after
+		{
+			content: 'Drawing'
+		}
+		.top-header a:hover div.header-left:after 
+		{
+			content: 'НА ГЛАВНУЮ';
+		}
+
+
+	</style>
+
+
+</head>
+<body>
+	<div class="container">
+		<header class="top-header">
+			<a href="index.html" style="text-decoration: none;"><div class="header-left"><img style="width:50px; height:50px;" draggable = "false" src="logo.png"/></div></a>
+			<div class="header-center">
+				<ul>
+					<li><a href="gallery.html">Галерея</a></li>
+					<li><a href="map.html">Карта сайта</a></li>
+				</ul>
+			</div>
+		</header>
+	</div>
+	<div style="width: 100%;height: 930px;padding-top: 100px">
+		<img src="main/ArtChibi.png" style="margin-left: 0px;float:left;width: auto;height: 100%;max-height: 85vh;min-height: 55vh "draggable = "false"/>
+		<div style="background: linear-gradient(to right, rgba(101,024,041,1),rgba(163,54,078,0));height: 100%;width: 100%;min-height: 55vh; max-height: 85vh;box-shadow: 20px 58px 5px rgba(0,0,0,0.4);">
+			<div class="text-container">
+				<div class="bubble">
+					<p> 
+						Я вас Категорически приветсвую. Меня зовут <a href ="https://vk.com/alfren_d">Никита</a>. Год (и 2 месяца) тому назад
+						я решил попробовать себя в рисовании, помог мне в этом графический редактор SAI. Во время процесса у меня возникла большая проблема. На данный момент руководств по работе в SAI на русском языке мало,
+						я был заинтересован в создании сайта-руководства для решения этой проблемы. Надеюсь, что мой сайт поможет тем кто столкнулся с трудностми на пути, так и тем, кто только планирует начать рисовать. С предоставленными вам материалами мне помог мой друг-художник <a href ="https://vk.com/droillex">Артём</a>(Так же будут предоставлены пара страниц его работ с описанием от его лица).
+						С руководствами вы можете ознакомиться ниже. Удачи в начинаниях!
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-wrapper">
+		<h3 style="position: relative; text-align: center;font: bold 70px Play; user-select: none;color: white;text-shadow: 8px 8px 4px rgba(0,0,0,0.6);padding-bottom: 50px;">Руководства</h3>
+		<div class="timeline-content-day">
+			
+
+			<div class="timeline-line"></div>
+
+			<div class="timeline-content-item">
+				<span style="--col: green;"></span>
+				<div class="vertical-line" style="--col: green;"><a href="manual.html"><img draggable = "false" class="image-class-bottom" style="--col: green;" src="main/1.jpg"/></a></div>
+				<p style="top:260px">Интерфейс</p>
+			</div>
+			<div class="timeline-content-item">
+				<span style="--col: #8b0000"></span>
+				<div class="vertical-line" style="--col: #8b0000;margin: 200px auto .5em auto;"><a href="links.html"><img draggable = "false" class="image-class-top" style="--col: #8b0000" src="links/1.png"/></a></div>
+				<p>Интересные ссылки</p>
+			</div>
+			<div class="timeline-content-item">
+				<span style="--col: gray;"></span>
+				<div class="vertical-line" style="--col: rgb(199,211,225);"><a href="reference.html"><img draggable = "false" class="image-class-bottom" style="--col: rgb(199,211,225);" src="main/1.jpg"/></a></div>
+				<p style="top:200px">Разбираем на референсы</p>
+			</div>
+
+			<div class="timeline-content-item">
+				<span style="--col: rgb(143,166,099)"></span>
+				<div class="vertical-line" style="--col: rgb(143,166,099);margin: 200px auto .5em auto;"><a href="JokaJoka.html"><img draggable = "false" class="image-class-top" style="--col: rgb(143,166,099)" src="main/11.08.2018.jpg"/></a></div>
+				<p>Работа Артёма №1</p>
+			</div>
+			<div class="timeline-content-item">
+				<span style="--col: rgb(147,109,158);"></span>
+				<div class="vertical-line" style="--col: rgb(147,109,158);"><a href="violet.html"><img draggable = "false" class="image-class-bottom" style="--col: rgb(147,109,158);" src="violet/char_violet1.png"/></a></div>
+				<p style="top:230px">Работа Артёма #2</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

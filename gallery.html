@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Галерея</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="lb/lightbox.min.css">
+	<script type="text/javascript" src="lb/lightbox-plus-jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'> 
+	<link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+	
+	<style type="text/css">
+
+		*
+		{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body .container
+		{
+			max-width: 100%;
+			margin:0 auto;
+		}
+		body
+		{
+			background-image: url(violet/BGTry.png);
+			background-color: #353535;
+		}
+		.top-header
+		{
+
+			display: flex; 
+			justify-content: space-between;
+			align-items: center;
+			padding: 5px 100px;
+			color: #fff;
+			background-color: #202020;
+			position: fixed;
+			width: 100%;
+			z-index: 1;
+			box-shadow: 0px 0px 35px rgba(0,0,0,0.3);
+		}
+		.header-left
+		{
+			display: flex; 
+			justify-content: space-between;
+			font: bold 34px 'Oswald';
+			user-select: none;
+			color: #ffffff;
+			width: auto;
+			height: 50px;
+		}
+		.header-center ul
+		{
+			list-style: none;
+			margin: -10px -480px;
+			position: absolute;
+		}
+		.header-center ul li
+		{
+			display: inline-block;
+			margin: 0 20px;
+		}
+
+		.header-center ul li a
+		{
+			text-decoration: none;
+			color: #fff;
+			cursor: pointer;
+			font-weight: :bold;
+			font: bold 18px "Ubuntu";
+			background-color: #161616;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			padding-left: 25px;
+			padding-right: 25px;
+			transition-property: background-color;
+			transition-duration: 0.1s;
+			transition-timing-function: ease-in-out;
+		}
+
+
+
+		.header-center ul li a:hover
+		{
+			background-color: #353535;
+		}
+		.top-header a div.header-left:after
+		{
+			content: 'Drawing'
+		}
+		.top-header a:hover div.header-left:after 
+		{
+			content: 'НА ГЛАВНУЮ';
+		}
+		.gallery
+		{
+			width: 100%;
+			padding-top: 100px;
+			text-align: center;
+			padding-bottom: 100px;
+		}
+		.gallery img
+		{
+			border-radius: 50%;
+			transition: .5s;
+			width: 25%;
+			height: auto;
+			margin: 30px 50px;
+			box-shadow: 0px 0px 35px 5px rgba(0,0,0,1);
+			filter:grayscale(100%);
+			
+		}
+		.gallery img:hover
+		{
+			transform: scale(1.05);
+			border-radius: 20px;
+			filter:grayscale(0%);
+			box-shadow: 0px 0px 45px 8px var(--col);
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+
+
+
+	<div class="container">
+		<header class="top-header">
+			<a href="index.html" style="text-decoration: none;"><div class="header-left"><img style="width:50px; height:50px;" draggable = "false" src="logo.png"/></div></a>
+			<div class="header-center">
+				<ul>
+					<li><a href="gallery.html">Галерея</a></li>
+				</ul>
+			</div>
+		</header>
+	</div>
+	<div class="gallery">
+		<a href="gallery/1.png" data-lightbox="mygallery"><img draggable = "false" style="--col: gray;" src="gallery/1-small.jpg"/></a>
+		<a href="gallery/2.png" data-lightbox="mygallery"><img draggable = "false" style="--col: gray;" src="gallery/2.png"/></a>
+		<a href="gallery/2-3.png" data-lightbox="mygallery"><img draggable = "false" style="--col: rgb(147,109,158)" src="gallery/2-3.png"/></a>
+		<a href="gallery/3.jpg" data-lightbox="mygallery"><img draggable = "false" style="--col: gray" src="gallery/3-small.jpg"/></a>
+		<a href="gallery/4.png" data-lightbox="mygallery"><img draggable = "false" style="--col: rgb(240,215,154)" src="gallery/4-small.png"/></a>
+		<a href="gallery/5.jpg" data-lightbox="mygallery"><img draggable = "false" style="--col: rgb(227,000,043)" src="gallery/5-small.png"/></a>
+		<a href="gallery/6.jpg" data-lightbox="mygallery"><img draggable = "false" style="--col: rgb(229,000,000)" src="gallery/6-small.jpg"/></a>
+		<a href="gallery/8.jpg" data-lightbox="mygallery"><img draggable = "false" style="--col: red" src="gallery/8.jpg"/></a>
+		<a href="gallery/9.jpg" data-lightbox="mygallery"><img draggable = "false" style="--col: rgb(143,166,099)"  src="gallery/9-small.jpg"/></a>
+	</div>
+</body>
+</html>
+
+

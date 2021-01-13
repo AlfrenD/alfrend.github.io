@@ -1,0 +1,420 @@
+<html>
+<head>
+    <title>Назад к истокам</title>
+    <meta charset="UTF-8">
+    <!-- тут подключаются шрифты из интернетов, прогугли "google fonts html" -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="lb/lightbox.min.css">
+    <script type="text/javascript" src="lb/lightbox-plus-jquery.min.js"></script>
+    <style type="text/css">
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body .container
+        {
+            max-width: 100%;
+            margin:0 auto;
+        }
+        .top-header
+        {
+
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 100px;
+            color: #fff;
+            background-color: #3a163d;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+            box-shadow: 0px 14px 5px rgba(0,0,0,0.3);
+        }
+        .top-header a div.header-left:after
+        {
+          content: 'Drawing'
+      }
+      .top-header a:hover div.header-left:after 
+      {
+          content: 'НА ГЛАВНУЮ';
+      }
+      /*В этой штуке сидит иконка шапки + текст */
+      .header-left
+      {
+        display: flex; 
+        justify-content: space-between;
+        font: bold 34px 'Oswald';
+        user-select: none;
+        color: #ffffff;
+        width: auto;
+        height: 50px;
+    }
+
+    .header-center ul
+    {
+        list-style: none;
+        margin: -10px -480px;
+        position: absolute;
+    }
+    .header-center ul li
+    {
+        display: inline-block;
+        margin: 0 20px;
+    }
+
+    .header-center ul li a
+    {
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        font-weight: :bold;
+        font: bold 18px "Ubuntu";
+        background-color: #200020;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
+        transition-property: background-color;
+        transition-duration: 0.1s;
+        transition-timing-function: ease-in-out;
+
+    }
+
+    .header-center ul li a:hover
+    {
+        background-color: #6d006b;
+    }
+
+    h3
+    {
+        font: bold 28px Roboto;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        text-shadow: 5px 5px 3px rgba(0,0,0,0.4);
+        color: #ffffff;
+        background: linear-gradient(to left, rgba(105,105,105,0),rgba(125,125,125,1),rgba(105,105,105,0));
+        height:auto;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .all-block
+    {
+        overflow-x: hidden;
+        max-width: 100%;
+        margin:0 auto;
+        padding: 100px 0px;
+        background-image: url(violet/BGTry.png);
+        background-repeat: repeat;
+        line-height: 1.5;
+        color: #d2d3d5;
+        box-shadow: 0px -14px 5px rgba(0,0,0,0.3);
+        padding-bottom: 120px;
+
+    }
+
+    .parallax 
+    {
+        background-image: url("violet/char_violet1.png");
+        background-size: 120%;
+        min-height: 200px; 
+        background-position: 25% 85%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        max-width: 100%;
+        margin:0 auto;
+        text-align: center;
+        padding: 120px 100px;
+        text-shadow: 4px 4px 2px #050505;
+        font-family: "Play";
+        font-size: 200%;
+        background-blend-mode: multiply;
+        background-color: #696969;
+        opacity: 1;
+        line-height: 1.5;
+        color: #fff;
+        user-select: none;
+    }
+
+    .hover-area-left
+    {
+        overflow-x: hidden;
+        position: relative;
+        margin: 0px -340px;
+        max-width: 100%;
+        transition-property: margin;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        width: 85%;
+        float:left;
+    }
+
+    .hover-area-left:hover
+    {
+        overflow-x: hidden;
+        position: relative;
+        margin: 0px 0px;
+    }
+
+    .hover-area-right
+    {
+        overflow-x: hidden;
+        position: relative;
+        max-width: 100%;
+        transition-property: margin;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        width: 85%;
+        margin: 0px 0px;
+        margin: 0px -310px;
+        float:right;
+    }
+
+    .hover-area-right:hover
+    {
+        overflow-x: hidden;
+        position: relative;
+        margin: 0px 0px;
+    }
+
+    .text-container
+    {
+        background: linear-gradient(to right, rgba(175,175,175,1),rgba(155,155,155,0));
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+        box-shadow: 20px 58px 5px rgba(0,0,0,0.4);
+        width:97%;
+        word-spacing: 5px;
+        margin-bottom: 100px;
+        min-height: 340;
+        position: relative;
+    }
+
+    .bubble 
+    {
+        width: auto;
+        height: auto;
+        min-height: 340px;
+        display: table; 
+    }
+
+    .bubble p
+    {
+        font: 26px "Roboto";
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #ffffff;
+        text-shadow: 4px 4px 2px rgba(0,0,0,0.5);
+        word-spacing: 5px;
+        display: table-cell; 
+        vertical-align: middle; 
+        text-align: justify; 
+    }
+
+    .left-block h2
+    {
+        padding-left: 5%;
+        font: bold 50px Roboto;
+    }
+
+    .right-block h2
+    {
+        text-align: right;
+        padding-right: 5%;
+        font: bold 50px Roboto;
+    }
+    .focus-info
+    {
+        color:rgb(147,109,158);
+        font-style: bold;
+    }
+
+    img
+    {
+        display: inline;
+    }
+    p
+    {
+        display: inline;
+    }
+    a
+    {
+        text-decoration: none;
+        color: violet;
+    }
+
+
+</style>
+</head>
+
+
+<body>
+    <!-- тут начинается шапка -->
+    <div class="container">
+        <header class="top-header">
+            <a href="index.html" style="text-decoration: none;"><div class="header-left"><img style="width:50px;height:50px" src="logo.png"/></div></a>
+            <div class="header-center">
+                <ul>
+                    <li><a href="gallery.html">Галерея</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <!-- тут заканчивается шапка -->
+    <!-- Завозим параллакс -->
+    <section class="parallax">
+        <h1>
+            Возвращаясь к истокам
+        </h1>
+    </section>
+    <!-- Увозим параллакс -->
+
+    <!-- Начинаем выставлять все блоки в общий контейнер -->
+    <section class="all-block">
+        <!-- Левый блок -->
+        <div class="left-block" style="border: 0px solid #f00;min-height: 850px;">
+            <h3>Ещё когда я в первый раз взял в руки перо графического планшета, я горел желанием рисовать определённых аниме персонажей. Сложно их как-то описать, куда проще показать. <a href="https://static.zerochan.net/Accelerator.full.1943061.jpg">Акселератор из Toaru Majutsu no Index</a>, <a href="https://static.zerochan.net/Alucard.%28Hellsing%29.full.2353515.png">Алукард из Hellsing Ultimate</a>. С первыми <strike>блинами комом</strike> попытками сделать что-то похожее можно ознакомиться на сайте. Сейчас же, спустя год и один месяц, я решил попробовать вновь
+            </h3>
+            <h2>Набросок лица</h2>
+            <div class="hover-area-left">
+                <div class="text-container">
+                    <a href ="violet/1.jpg" data-lightbox="mygallery"><img draggable = "false" src="violet/1.jpg" style="float:left;mix-blend-mode: multiply;margin-right: 80px; width:250px;height:321px"/></a>
+                    <div class = "bubble">
+                        <p>
+                           По правде говоря, конкретной цели <span class="focus-info">"придумать персонажа"</span> я перед собой не ставил. Я решил потренироваться в изображении <span class="focus-info">эмоций</span>. На повестке дня было изображение отчаяния, безумства, истерики, как вам угодно. В ходе рисования выяснил, что маленькие <span class="focus-info">радужки</span>, острая приплюснутая <span class="focus-info">форма глаза</span> и широкая <span class="focus-info">ухмылка</span> довольно сильно сказываются на восприятии лица. Кстати, положение и форма <span class="focus-info">бровей</span> тоже играют не последнюю роль. Я накидал три варианта различной степени отбитости, после чего решил конкретно так заняться <span class="focus-info">первым</span> наброском, превратив его в полноценного персонажа. Почему именно этот из всех трёх? Нууу, его черты были довольно близки к таковым у персонажей, которых я упомянул ранее. Но и остальные не за горами, если что, ага
+                       </p>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <!-- Левый блок усё-->
+
+       <!-- Правый блок -->
+       <div class="right-block"style="border: 0px solid #ff0;float:right;min-height: 600px;">
+        <h2>Прическа</h2>
+        <div class="hover-area-right">
+            <div class="text-container" style="background: linear-gradient(to left, rgba(175,175,175,1),rgba(155,155,155,0));float: right;box-shadow: -20px 58px 5px rgba(0,0,0,0.4);">
+                <a href ="violet/2.jpg" data-lightbox="mygallery"><img draggable = "false" src="violet/2.jpg" style="float:right;mix-blend-mode: multiply;margin-left:40px;width:264px;height:319px"/></a>
+                <div class="bubble">
+                    <p>
+                       В какой-то момент я решил, что плохо понимаю <span class="focus-info">структуру</span> волос : нужно нарисовать причёску, которая бы легко воспринималась, и которую я без проблем мог бы воссоздать из базовых форм. Ещё до начала работы в голове была идея : один край сбрит, куча волос на другом краю. (Что-то похожее носил Ута из Tokyo Ghoul, правда представлялась мне совершенно иная форма волос) Волосы нарисованы <span class="focus-info">густыми</span> неслучайно : в случае чего их можно перекинуть и в обратную сторону, для <span class="focus-info">баланса</span>. Тогда и персонаж будет чувствоваться иначе. Так сказать, сделать необычную прическу, с помощью изменения которой можно показывать <span class="focus-info">изменения настроения</span> персонажа. Такой приём периодически используется в манге и аниме и является одним из интересных средств визуальной выразительности
+                   </p>
+               </div>
+           </div>
+       </div>
+   </div>
+   <!-- Правый блок усё -->
+
+   <!-- Левый блок -->
+   <div class="left-block"style="border: 0px solid #f00;float: left;min-height: 600px;">
+    <h2 style="color: #6f6075">Добавим цвета</h2>
+    <div class="hover-area-left">
+        <div class="text-container" style="background: linear-gradient(to right, rgba(32,20,32,1),rgba(32,20,32,1),rgba(32,20,32,0.5),rgba(32,20,32,0));">
+            <a href ="violet/3.jpg" data-lightbox="mygallery"><img draggable = "false" src="violet/3.jpg" style="float:left;margin-right: 40px;width:299px;height:316px"/></a>
+            <div class = "bubble">
+                <p>
+                    Смотрю на него, и думаю : "Было бы интересно добавить минимум <span class="focus-info">цвета</span>. Что-то вроде цветных глаз, а всё остальное чёрно-белое" 
+                    Похоже, что мне нравится <span class="focus-info">фиолетовый</span> на роль цвета глаз необычных персонажей. Напомните, в который раз уже использую его?
+                    Кхм, тогда-то в голове родилась мысль : <span class="focus-info">"энергия из глаза и разбитое стекло."</span> 
+                    Понятия не имел, что с этим делать, но звучало круто. (по крайней мере в моём бесформенном воображении) 
+                    <span class="focus-info">Молнию</span> попробовал нарисовать, ориентируясь на обучалку из интернета. (pinterest-каеф)
+                    Хотя это не совсем молния. Молния - что-то более строгое, а мне нужно было нечто более <span class="focus-info">органическое</span>, но не суть. Цель была достигнута
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Левый блок усё -->
+
+<!-- Правый блок -->
+<div class="right-block" style="border: 0px solid #ff0;float:right;min-height: 600px;">
+    <h2 style="color:#827089">Уникальные черты rev.I</h2>
+    <div class="hover-area-right">
+        <div class="text-container" style="background: linear-gradient(to left, rgba(59,42,64,1),rgba(59,42,64,1),rgba(59,42,64,0));float: right;box-shadow: -20px 58px 5px rgba(0,0,0,0.4);">
+            <a href ="violet/4.jpg" data-lightbox="mygallery"><img draggable = "false" src="violet/4.jpg" style="float:right;margin-left:40px; width:324px;height:379px"/></a>
+            <div class="bubble">
+                <p style="font-size: 24px">
+                    Если присмотреться, ещё на этапе первых набросков я положил начало некоторой задумке. Зрачок у него нарисован не точкой (иль ещё чем похожим), а символом, что-то вроде <span class="focus-info">иконки подачи электропитания</span>. Эта идея до сих пор не была толком обыграна.В смысле, у него шля энергия из глаза и всё такое, но <<span class="focus-info">почему тогда второй - обычный, если он выглядит так же?</span> В общем, начал закидывать себя пачкой логических вопросов, пытаясь понять, чего же я всё-таки хочу.
+                    Если один глаз "запущен", то он должен <span class="focus-info">отличаться</span> от обычного, как минимум. Возился со слоями и случайно отрубил подложку под белки глаз : лицезрел <span class="focus-info">чёрные глаза</span> с фиолетовой радужкой. "Выглядит занятно", - подумал я, начал копать в этом направлении. Раз питание у глаза подрублено, нужно изменить сам зрачок. Если он по дефолту чёрный, то нужно инвертировать в белый и сделать <span class="focus-info">свечение</span>. Уже лучше, но просто чёрный фон глаза смотрится бедновато. Тааааааааааааааааааааааак, шо там, энергия, да? Электроника всякая, <span class="focus-info">микросхемы</span>. Ага, узоры микросхем со строго прямыми линии, которые заканчиваются кружками, это то, что мне нужно. Так и появилась идея сделать ему разные глаза  
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Правый блок усё-->
+
+<!-- Левый блок -->
+<div class="left-block"style="border: 0px solid #f00;float: left;min-height: 600px;">
+    <h2 style="color:#827089">Уникальные черты rev.II</h2>
+    <div class="hover-area-left">
+        <div class="text-container" style="background: linear-gradient(to right, rgba(59,42,64,1),rgba(59,42,64,1),rgba(59,42,64,0));">
+            <a href ="violet/5.jpg" data-lightbox="mygallery"><img draggable = "false" src="violet/5.jpg" style="float:left;margin-right: 70px;width:264px;height:308px"/></a>
+            <div class = "bubble">
+                <p> 
+                    С этим разобрался, решил вернуться к <span class="focus-info">стеклу</span>, потому... Ну потому, что просто хочу нарисовать стекло, наверное. Пару дней думал : "Как приплести сюда стекло, чтоб это было хоть как-то обоснованно?" Появилась идея разбивающейся стеклянной маски, нашёл в интернетах интересную форму, начал реализовывать.
+                    Тогда и думаю : "А? Стеклянная маска? Что это вообще такое и зачем? <span class="focus-info">Какой вообще смысл</span> она в себе несёт?" Эта идея мне стала нравиться куда меньше, начал придумывать новую. Забавно, что решение буквально лежало у меня под носом - <span class="focus-info">очки</span>. В качестве основной формы оправы был взят <span class="focus-info">треугольник</span> и максимум угловатости. Кому нужны просто двойные дуги, когда можно пустить их по диагонали? Получился довольно необычный вариант, которым я остался доволен 
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Левый блок усё -->
+
+<!-- Правый блок -->
+<div class="right-block"style="border: 0px solid #ff0;float:right;min-height: 600px;">
+    <h2 style="color:#827089">Background</h2>
+    <div class="hover-area-right">
+        <div class="text-container" style="background: linear-gradient(to left, rgba(59,42,64,1),rgba(59,42,64,1),rgba(59,42,64,0));float: right;box-shadow: -20px 58px 5px rgba(0,0,0,0.4);">
+            <a href ="violet/6.jpg" data-lightbox="mygallery"><img draggable = "false" src="violet/6.jpg" style="float:right;margin-left:0px;width:316px; height:319px"/></a>
+            <div class="bubble">
+                <p>
+                    Хотел я уже закончить, но нужен <span class="focus-info">фон</span>. Вариант "просто накидать плавный переход цвета от светлого к тёмному" почему-то меня не устроил. Начал опять же искать идею. Среди прочих была такая - простой геометрический <span class="focus-info">узор из треугольников/ромбов</span>. Подумав ещё некоторое время, решил проталкивать идею с микросхемами. Да, они использовались в глазу, но я посчитал, что этот паттерн не приедается. В качестве основы для фона использовался узор <span class="focus-info">Electro</span> из SAI. Правда выглядел он блекло, его нужно было как следует прокачать. Пучки энергии, разные уровни на узоре микросхемы и рамка, идея которой появилась после просмотра кучи пикч с сокетами, сделали своё дело
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Правый блок усё -->
+
+<!-- Левый блок -->
+<div class="left-block"style="border: 0px solid #f00;float: left;min-height: 500px;">
+    <h2 style="color:#827089">Итоги</h2>
+    <div class="hover-area-left">
+        <div class="text-container" style="background: linear-gradient(to right, rgba(59,42,64,1),rgba(59,42,64,1),rgba(59,42,64,0));">
+            <a href ="violet/char_violet1.png" data-lightbox="mygallery"><img draggable = "false" src="violet/char_violet1.png"  style="float:left;margin-right: 20px;width:318px;height:324px;"/></a>
+            <div class = "bubble">
+                <p>
+                    Сложно сказать, сколько дней было потрачено на создание. Что я могу с уверенностью сказать - пока что это самая насыщенная на идеи работа. Чуть ли не единственное лицо, которым я, в конечном счёте, остался доволен. Полагаю, что это можно назвать прогрессом. Однажды я вернусь к этому персонажу, чтобы нарисовать полноценный <span class="focus-info">character sheet</span>: продумаю набор одежды и различные эмоции
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Левый блок усё-->
+
+</section>
+<!-- Опа, блоки закончились -->
+</body>
+</html>
+
+
+
+
+
+
+
+

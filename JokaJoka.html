@@ -1,0 +1,356 @@
+<html>
+<head>
+    <title>Кастрюльные приключения Жоки Жоки: Таинственный аромат</title>
+    <meta charset="UTF-8">
+    <!-- тут подключаются шрифты из интернетов, прогугли "google fonts html" -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="lb/lightbox.min.css">
+    <script type="text/javascript" src="lb/lightbox-plus-jquery.min.js"></script>
+    <style type="text/css">
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body .container
+        {
+            max-width: 100%;
+            margin:0 auto;
+        }
+
+        .top-header
+        {
+
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 100px;
+            color: #fff;
+            background-color: rgb(082,090,111 );
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+            box-shadow: 0px 14px 5px rgba(0,0,0,0.3);
+        }
+        .top-header a div.header-left:after
+        {
+          content: 'Drawing'
+      }
+      .top-header a:hover div.header-left:after 
+      {
+          content: 'НА ГЛАВНУЮ';
+      }
+
+      .header-left
+      {
+        display: flex; 
+        justify-content: space-between;
+        font: bold 34px 'Oswald';
+        user-select: none;
+        color: #ffffff;
+        width: auto;
+        height: 50px;
+    }
+
+    .header-center ul
+    {
+        list-style: none;
+        margin: -10px -480px;
+        position: absolute;
+    }
+
+    .header-center ul li
+    {
+        display: inline-block;
+        margin: 0 20px;
+    }
+
+    .header-center ul li a
+    {
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        font-weight: :bold;
+        font: bold 18px "Ubuntu";
+        background-color: rgb(072,079,096);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
+        transition-property: background-color;
+        transition-duration: 0.1s;
+        transition-timing-function: ease-in-out;
+
+    }
+
+    .header-center ul li a:hover
+    {
+        background-color: rgb(121,134,165);
+    }
+
+    h3
+    {
+        font: bold 28px Roboto;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        text-shadow: 5px 5px 3px rgba(0,0,0,0.4);
+        color: #ffffff;
+        background: linear-gradient(to left, rgba(105,105,105,0),rgba(125,125,125,1),rgba(105,105,105,0));
+        height:auto;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .all-block
+    {
+        overflow-x: hidden;
+        max-width: 100%;
+        margin:0 auto;
+        padding: 100px 0px;
+                /*#464646
+                background-color: #202225;
+                */
+                background-image: url(violet/BGTry.png);
+                background-repeat: repeat;
+                line-height: 1.5;
+                color: #d2d3d5;
+                box-shadow: 0px -14px 5px #808080;
+                mix-blend-mode: multiply;
+            }
+
+            .parallax 
+            {
+                background-image: url("JokaJoka/Joka.jpg");
+                background-size: 160%;
+                min-height: 400px; 
+                background-position: 25% 50%;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                max-width: 100%;
+                text-align: center;
+                margin:0 auto;
+                padding: 120px 100px;
+                text-shadow: 4px 4px 2px #050505;
+                font-family: "Play";
+                font-size: 200%;
+                background-blend-mode: multiply;
+                background-color: #696969;
+                opacity: 1;
+                line-height: 1.5;
+                color: #fff;
+                user-select: none;
+            }
+
+            .hover-area-left
+            {
+                overflow-x: hidden;
+                position: relative;
+                margin: 0px -340px;
+                max-width: 100%;
+                transition-property: margin;
+                transition-duration: 0.3s;
+                transition-timing-function: ease-in-out;
+                width: 85%;
+                float:left;
+            }
+
+            .hover-area-left:hover
+            {
+                overflow-x: hidden;
+                position: relative;
+                margin: 0px 0px;
+            }
+
+            .hover-area-right
+            {
+                overflow-x: hidden;
+                position: relative;
+                max-width: 100%;
+                transition-property: margin;
+                transition-duration: 0.3s;
+                transition-timing-function: ease-in-out;
+                width: 85%;
+                margin: 0px 0px;
+                margin: 0px -310px;
+                float:right;
+            }
+            
+            .hover-area-right:hover
+            {
+                overflow-x: hidden;
+                position: relative;
+                margin: 0px 0px;
+            }
+
+            .text-container
+            {
+                background: linear-gradient(to right, rgba(082,090,111 ,1),rgba(120,131,161,0));
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-right: 10px;
+                padding-left: 10px;
+                box-shadow: 20px 58px 5px rgba(0,0,0,0.4);
+                width:97%;
+                word-spacing: 5px;
+                margin-bottom: 100px;
+                min-height: 340;
+                position: relative;
+            }
+
+            .bubble 
+            {
+                width: auto;
+                height: auto;
+                min-height: 340px;
+                display: table; 
+            }
+
+            .bubble p
+            {
+                font: 26px "Roboto";
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                color: #ffffff;
+                text-shadow: 4px 4px 2px rgba(0,0,0,0.5);
+                word-spacing: 5px;
+                display: table-cell; 
+                vertical-align: middle; 
+                text-align: justify; 
+            }
+
+            .left-block h2
+            {
+                padding-left: 5%;
+                font: bold 50px Roboto;
+            }
+
+            .right-block h2
+            {
+                text-align: right;
+                padding-right: 5%;
+                font: bold 50px Roboto;
+            }
+
+            .focus-info
+            {
+                color:rgb(123,146,079);
+                font-style: bold;
+            }
+
+            img
+            {
+                display: inline;
+            }
+            p
+            {
+                display: inline;
+            }
+            a
+            {
+                text-decoration: none;
+                color: white;
+            }
+            
+
+        </style>
+    </head>
+
+
+    <body>
+        <!-- тут начинается шапка -->
+        <div class="container">
+            <header class="top-header">
+                <a href="index.html" style="text-decoration: none;"><div class="header-left"><img style="width:50px;height:50px;" src="logo.png"/></div></a>
+                <div class="header-center">
+                    <ul>
+                        <li><a href="gallery.html">Галерея</a></li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+        <!-- тут заканчивается шапка -->
+        <!-- Завозим параллакс -->
+        <section class="parallax">
+            <h1 style="padding-top: 50px; width: 60%; margin-left: 20%">
+                Кастрюльные приключения Жоки Жоки: Таинственный аромат
+            </h1>
+        </section>
+        <!-- Увозим параллакс -->
+
+        <!-- Начинаем выставлять все блоки в общий контейнер -->
+        <section class="all-block">
+            <!-- Левый блок -->
+            <div class="left-block" style="border: 0px solid #f00;min-height: 850px;">
+                <h3>
+                    Вечер локальных мемов в discord. <a href="https://vk.com/antiykho">Даниил (a.k.a. риггер-фигер)</a> открывает <strike>кастрюлю</strike> ящик пандоры: история про его одногруппника <a href="https://vk.com/evgenisherkunov">Евгения, также известного, как <span class="focus-info">Жока</span></a>. *Напряжённая детективная музыка.* <span class="focus-info">Вологодское общежитие, 15 марта 2018 года.</span> Отправляясь мыть посуду, Даниил замечает кастрюлю, притаившуюся в углу. Инстинкт самосохранения дал сбой, а слова древных мудрецов вроде : "Не лезь, дибил..." не возымели эффекта. Стоило открыть посуду, как все бедствия и несчатья человечества вырвались наружу : её не мыли целый месяц. Вы ожидали, что это обычная кастрюля? Мы тоже. Но это явно был <span class="focus-info">ENEMY STAND</span>!
+                </h3>
+                <h2>Идея</h2>
+                <div class="hover-area-left">
+                    <div class="text-container">
+                        <a href ="JokaJoka/1.jpg" data-lightbox="mygallery"><img src="JokaJoka/1.jpg" style="width:260px;height:316px;border-radius: 10%;box-shadow: 0 0 10px 0px rgba(0,0,0,0.4) ;float:left;margin-right: 80px;"/></a>
+                        <div class = "bubble">
+                            <p>
+                             Идея Жоки с кастрюльным стендом висела в воздухе давным-давно: рофл пользовался популярностью в узких кругах, но до сих пор не был реализован визуально. Одним прекрасным вечером я решил исправить это недоразумение. На словах звучало интригующе, но что из себя представляет <span class="focus-info">кастрюльный стенд</span>? Пытаясь выяснить это, мы собирали идеи воедино, перебирая золотую коллекцию фотографии с Евгением. Идей было несколько, но наиболее удачной стала эта : таинственная фигура в пиджаке и с кастрюлей на голове  
+                         </p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- Левый блок усё-->
+
+         <div class="right-block"style="border: 0px solid #ff0;float:right;min-height: 600px;">
+            <h2>Набросок</h2>
+            <div class="hover-area-right">
+                <div class="text-container" style="background: linear-gradient(to left, rgba(082,090,111 ,1),rgba(120,131,161,0));float: right;box-shadow: -20px 58px 5px rgba(0,0,0,0.4);">
+                    <a href ="JokaJoka/2(1).jpg" data-lightbox="mygallery"><img draggable = "false" src="JokaJoka/2(1).jpg" style="width:270px;height:350px;border-radius: 10%;box-shadow: 0 0 10px 0px rgba(0,0,0,0.4);float:right;margin-left:40px;"/></a>
+                    <div class="bubble">
+                        <p> 
+                            Этап наброска не слишком требователен : необходимо подобрать <span class="focus-info">базовые формы</span>, определиться с пропорциями и особенными чертами. Тем не менее, это шаг, во многом определяющий весь рисунок. Нужно создать базу, этакий скелет, которому позднее можно добавить деталей. Но в нашем случае этого было мало : требовалось также подогнать первоисточник под стилистику JoJo. Забавно, но набросок был сделан за пару часов. Мне даже было не влом прикинуть цвета.<strike> Хоть в итоге и использовались совершенно другие</strike>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="left-block"style="border: 0px solid #f00;float: left;min-height: 600px;">
+            <h2>Чистовик почти готов</h2>
+            <div class="hover-area-left">
+                <div class="text-container" style="background: linear-gradient(to right, rgba(082,090,111 ,1),rgba(120,131,161,0));">
+                    <a href ="JokaJoka/4.jpg" data-lightbox="mygallery"><img draggable = "false" src="JokaJoka/4.jpg" style="width:296px;height:343px;border-radius: 10%;box-shadow: 0 0 10px 0px rgba(0,0,0,0.4) ;float:left;margin-right: 40px"/></a>
+                    <div class = "bubble">
+                        <p>Карскас был готов, осталось только (значительно) увеличить детализацию, максимально приблизив рисунок к JoJo стилистике. За основу цветовой гаммы и черт лица был взят <strike>Ржотаро</strike> Jotaro, главный герой части Stardust Crusaders. На наброске совсем забыл про уши, пофиксил. По задумке, стенд Жоки должен казаться максимально ядовитым и <span class="focus-info">токсичным</span>. Я решил, что использование более светлых оттенков зелёного, вкупе со свечением вокруг силуэта, сможет создать этот эффект. Также не забыл слегка обмазать химикатами сам стенд. Кстати, до сих пор удивляюсь, что столько я успел сделать всего за <span class="focus-info">2 дня</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="right-block"style="border: 0px solid #ff0;float:right;min-height: 600px;">
+            <h2>Результат</h2>
+            <div class="hover-area-right">
+                <div class="text-container" style="background: linear-gradient(to left, rgba(082,090,111 ,1),rgba(120,131,161,0));float: right;box-shadow: -20px 58px 5px rgba(0,0,0,0.4);">
+                    <a href ="JokaJoka/Joka.jpg" data-lightbox="mygallery"><img draggable = "false" src="JokaJoka/5.jpg" style="width:244px;height:329px;border-radius: 10%;box-shadow: 0 0 10px 0px rgba(0,0,0,0.4);float:right;margin-left:40px;"/></a>
+                    <div class="bubble">
+                        <p> 
+                            За 3 неполных рабочих дня рисунок был завершён : добавлены падающие тени и характерные символы ゴゴゴゴ в цветовой схеме стенда. Здесь пришла в голову идея оформить рисунок аля экран со статами, который появлялся в сериале во время перебивок в середине серии. Стенд было решено назвать на манер такового у Какёина: <span class="focus-info">Sausepan Green</span>. А с характеристиками было сложнее. В конечном счёте остановились на таком варианте: <span class="focus-info">Power: A</span>, так как запах был действительно убийственным; <span class="focus-info">Speed: D</span>, ведь Жока не слишком силён в беге; <span class="focus-info">Range: D</span>, ибо запах хоть и был смертельным, но разносился не слишком далеко;<span class="focus-info"> Durability: A</span> - эту кастрюлю хрен отмоешь; <span class="focus-info">Precision: D</span> - тут и не помню уже; <span class="focus-info">Potential: E</span> - наименьшая оценка, ибо какой потенциал может быть у того, кто месяц не мог помыть кастрюлю?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Опа, блоки закончились -->   
+</body>
+</html>

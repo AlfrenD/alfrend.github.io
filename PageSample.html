@@ -1,0 +1,477 @@
+<html>
+<head>
+    <title>Название статьи</title>
+    <meta charset="UTF-8">
+    <!-- тут подключаются шрифты из интернетов, прогугли "google fonts html" -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* тут кусок верхней шапки, выставленна максимальная ширина контейнера */
+        body .container
+        {
+            max-width: 100%;
+            margin:0 auto;
+        }
+            /* основные настройки шапки : flex позволяет ей адаптивно растягиваться,
+            space-between раскидывает элементы по всей шапке, align-items равняет содержимое,
+            position: fixed закрепляет её, чтоб она всегда была сверху*/
+            .top-header
+            {
+
+                display: flex; 
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px 100px;
+                color: #fff;
+                background-color: #3a163d;
+                position: fixed;
+                width: 100%;
+                z-index: 1;
+                box-shadow: 0px 14px 5px rgba(0,0,0,0.3);
+            }
+            .top-header a div.header-left:after
+            {
+              content: 'Drawing'
+          }
+          .top-header a:hover div.header-left:after 
+          {
+              content: 'НА ГЛАВНУЮ';
+          }
+          /*В этой штуке сидит иконка шапки + текст */
+          .header-left
+          {
+            display: flex; 
+            justify-content: space-between;
+            font: bold 34px 'Oswald';
+            user-select: none;
+            color: #ffffff;
+            width: auto;
+            height: 50px;
+        }
+            /*А вот здесь настроены элементы списка, что справа в шапке
+            крч вон те кнопки*/
+            .header-center ul
+            {
+                list-style: none;
+                margin: -10px -480px;
+                position: absolute;
+            }
+            /*Здесь им выставлено отображение в строку*/
+            .header-center ul li
+            {
+                display: inline-block;
+                margin: 0 20px;
+            }
+
+            /*Тут убираем text-decoration, ибо тег ссылки любит добавлять нижнее 
+            подчёркивание к тексту, выставляем отступы (для фона текста, чтоб по размеру шапки было)
+            А вот последние штуки отвечают за анимацию : что анимируем, сколько переход, каким методом*/
+            .header-center ul li a
+            {
+                text-decoration: none;
+                color: #fff;
+                cursor: pointer;
+                font-weight: :bold;
+                font: bold 18px "Ubuntu";
+                background-color: #200020;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 25px;
+                padding-right: 25px;
+                transition-property: background-color;
+                transition-duration: 0.1s;
+                transition-timing-function: ease-in-out;
+
+            }
+            /* А тут в hover пишем, что происходит, когда навели курсор
+            в данном случае - смена цвета */
+            .header-center ul li a:hover
+            {
+                background-color: #6d006b;
+            }
+            /*Эт для всех тегов h3 выставлены параметры
+            Использую их для центральных комментариев (в начале страницы под заголовком)*/
+            h3
+            {
+                font: bold 28px Roboto;
+                text-align: center;
+                margin-top: 30px;
+                margin-bottom: 100px;
+                text-shadow: 5px 5px 3px rgba(0,0,0,0.4);
+                color: #ffffff;
+                background: linear-gradient(to left, rgba(105,105,105,0),rgba(125,125,125,1),rgba(105,105,105,0));
+                height:auto;
+                width: 70%;
+                margin-left: 15%;
+                margin-right: 15%;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            /*Общий контейнер для всех вылезающих из-за экрана штук
+            overflow-x: hidden; тут был очень важен, ведь это позволило
+            мне частично выкидывать блоки за область экрана */          
+            .all-block
+            {
+                overflow-x: hidden;
+                max-width: 100%;
+                margin:0 auto;
+                padding: 100px 0px;
+                /*#464646
+                background-color: #202225;
+                */
+                background-image: url(violet/BGTry.png);
+                background-repeat: repeat;
+                line-height: 1.5;
+                color: #d2d3d5;
+                box-shadow: 0px -14px 5px #808080;
+                mix-blend-mode: multiply;
+            }
+            /*Ммм, параллакс. Простая его версия, используется в заголовке статьи
+            Пикча там как бы на другом уровне, мне нравится, хых*/
+            .parallax 
+            {
+                background-image: url("violet/char_violet1.png");
+                background-size: 120%;
+                min-height: 200px; 
+                background-position: 25% 85%;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                max-width: 100%;
+                margin:0 auto;
+                text-align: center;
+                padding: 120px 100px;
+                text-shadow: 4px 4px 2px #050505;
+                font-family: "Play";
+                font-size: 200%;
+                background-blend-mode: multiply;
+                background-color: #696969;
+                opacity: 1;
+                line-height: 1.5;
+                color: #fff;
+                user-select: none;
+            }
+            /*Типовой блок для всех штук, которые выезжают слева
+            Тут опять есть параметры анимации, overflow
+            float прикрепляет к определённому краю экрана*/
+            .hover-area-left
+            {
+                overflow-x: hidden;
+                position: relative;
+                margin: 0px -340px;
+                max-width: 100%;
+                transition-property: margin;
+                transition-duration: 0.3s;
+                transition-timing-function: ease-in-out;
+                width: 85%;
+                float:left;
+            }
+            /*Ну а тут блок сдвгается в нулевые координаты при наведении курсора,
+            чтоб он был полностью виден. Классная штука этот hover*/
+            .hover-area-left:hover
+            {
+                overflow-x: hidden;
+                position: relative;
+                margin: 0px 0px;
+            }
+            /*Аналогично для правого блока*/
+            .hover-area-right
+            {
+                overflow-x: hidden;
+                position: relative;
+                max-width: 100%;
+                transition-property: margin;
+                transition-duration: 0.3s;
+                transition-timing-function: ease-in-out;
+                width: 85%;
+                margin: 0px 0px;
+                margin: 0px -310px;
+                float:right;
+            }
+            
+            .hover-area-right:hover
+            {
+                overflow-x: hidden;
+                position: relative;
+                margin: 0px 0px;
+            }
+            /*Контейнер для текста блоков. В нём задаём фон градиентом,
+            размеры, отступ слов и относительное расположение*/
+            .text-container
+            {
+                background: linear-gradient(to right, rgba(175,175,175,1),rgba(155,155,155,0));
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-right: 10px;
+                padding-left: 10px;
+                box-shadow: 20px 58px 5px rgba(0,0,0,0.4);
+                width:97%;
+                word-spacing: 5px;
+                margin-bottom: 100px;
+                min-height: 340;
+                position: relative;
+            }
+            /*Штука, которая позволит выровнять текст по вертикали
+            Ключевая строка тут display: table, которая и позволит ровнять*/
+            .bubble 
+            {
+                width: auto;
+                height: auto;
+                min-height: 340px;
+                display: table; 
+            }
+            /*А тут и все настройки текста в этих блоках*/
+            .bubble p
+            {
+                font: 26px "Roboto";
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                color: #ffffff;
+                text-shadow: 4px 4px 2px rgba(0,0,0,0.5);
+                word-spacing: 5px;
+                display: table-cell; 
+                vertical-align: middle; 
+                text-align: center; 
+                /*border: 1px solid #f00;*/
+            }
+            /*Тут у нас текст над блоками*/
+            .left-block h2
+            {
+                padding-left: 5%;
+                font: bold 50px Roboto;
+            }
+
+            .right-block h2
+            {
+                text-align: right;
+                padding-right: 5%;
+                font: bold 50px Roboto;
+            }
+            /*Стиль для выделения важных слов в тексте*/
+            .focus-info
+            {
+                color:violet;
+                font-style: bold;
+            }
+            /*Тут делаем так, чтоб пикчи и текст отображались в одну линию
+            Нужно для нижней шапки (иль как она называется?)*/
+            img
+            {
+                display: inline;
+            }
+            p
+            {
+                display: inline;
+            }
+            
+            .tooltip 
+            {
+              position: relative;
+              display: inline-block;
+              border-bottom: 1px dotted white; 
+            }
+
+          .tooltip .tooltiptext 
+          {
+              visibility: hidden;
+              width: 120px;
+              background-color: #555;
+              color: #fff;
+              text-align: center;
+              padding: 5px 0;
+              border-radius: 6px;
+              z-index: 1;
+              bottom: 125%;
+              left: 50%;
+              margin-left: -60px;
+              opacity: 0;
+              transition: opacity 0.3s;
+          }
+
+          .tooltip .tooltiptext::after
+          {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: #555 transparent transparent transparent;
+          }
+
+          .tooltip:hover .tooltiptext 
+          {
+              visibility: visible;
+              opacity: 1;
+          } 
+      </style>
+  </head>
+
+
+  <body>
+    <!-- тут начинается шапка -->
+    <div class="container">
+        <header class="top-header">
+            <a href="index.html" style="text-decoration: none;"><div class="header-left"><img width="50px" height="50px" src="logo.png"></div></a>
+            <div class="header-center">
+                <ul>
+                    <li><a href="map.html">Карта сайта</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="info.html">Информация</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <!-- тут заканчивается шапка -->
+    <!-- Завозим параллакс -->
+    <section class="parallax">
+        <h1>
+            Название статьи
+        </h1>
+    </section>
+    <!-- Увозим параллакс -->
+
+    <!-- Начинаем выставлять все блоки в общий контейнер -->
+    <section class="all-block">
+        <!-- Левый блок -->
+        <div class="left-block" style="border: 0px solid #f00;min-height: 850px;">
+            <h3>Допустим, что тут будет какая-то общая инфа, расположена по центру.
+                А вот что-то <span class="focus-info"> важное</span>. <strike>Бла бла бла бла бла.</strike> Тестовое сообщение. Туда-сюда.<div class="tooltip"> Жока.<span class="tooltiptext">Hehehe boiiiiii </span> </div> Нужно придумать <span class="focus-info">шаблон</span> текста для таких случаев
+            </h3>
+            <h2>Набросок лица</h2>
+            <div class="hover-area-left">
+                <div class="text-container">
+                    <a href ="violet/1.jpg"><img src="violet/1.jpg" width="250" height="321" style="float:left;mix-blend-mode: multiply;margin-right: 80px;"></a>
+                    <div class = "bubble">
+                        <p> Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Левый блок усё-->
+
+        <!-- Правый блок -->
+        <div class="right-block"style="border: 0px solid #ff0;float:right;min-height: 600px;">
+            <h2>Прическа</h2>
+            <div class="hover-area-right">
+                <div class="text-container" style="background: linear-gradient(to left, rgba(175,175,175,1),rgba(155,155,155,0));float: right;box-shadow: -20px 58px 5px rgba(0,0,0,0.4);">
+                    <a href ="violet/2.jpg"><img src="violet/2.jpg" width="264" height="319" style="float:right;mix-blend-mode: multiply;margin-left:40px;"></a>
+                    <div class="bubble">
+                        <p> Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Правый блок усё -->
+
+        <!-- Левый блок -->
+        <div class="left-block"style="border: 0px solid #f00;float: left;min-height: 600px;">
+            <h2 style="color: #6f6075">Добавим цвета</h2>
+            <div class="hover-area-left">
+                <div class="text-container" style="background: linear-gradient(to right, rgba(32,20,32,1),rgba(32,20,32,1),rgba(32,20,32,0.5),rgba(32,20,32,0));">
+                    <a href ="violet/3.jpg"><img src="violet/3.jpg" width="299" height="316" style="float:left;margin-right: 40px"></a>
+                    <div class = "bubble">
+                        <p> Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Левый блок усё -->
+
+        <!-- Правый блок -->
+        <div class="right-block" style="border: 0px solid #ff0;float:right;min-height: 600px;">
+            <h2 style="color:#827089">Уникальные черты rev.I</h2>
+            <div class="hover-area-right">
+                <div class="text-container" style="background: linear-gradient(to left, rgba(59,42,64,1),rgba(59,42,64,1),rgba(59,42,64,0));float: right;box-shadow: -20px 58px 5px rgba(0,0,0,0.4);">
+                    <a href ="violet/4.jpg"><img src="violet/4.jpg" width="267" height="313" style="float:right;margin-left:40px;"></a>
+                    <div class="bubble">
+                        <p> Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Правый блок усё-->
+
+        <!-- Левый блок -->
+        <div class="left-block"style="border: 0px solid #f00;float: left;min-height: 600px;">
+            <h2 style="color:#827089">Уникальные черты rev.II</h2>
+            <div class="hover-area-left">
+                <div class="text-container" style="background: linear-gradient(to right, rgba(59,42,64,1),rgba(59,42,64,1),rgba(59,42,64,0));">
+                    <a href ="violet/5.jpg"><img src="violet/5.jpg" width="264" height="308" style="float:left;margin-right: 70px;"></a>
+                    <div class = "bubble">
+                        <p> Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Левый блок усё -->
+
+        <!-- Правый блок -->
+        <div class="right-block"style="border: 0px solid #ff0;float:right;min-height: 600px;">
+            <h2 style="color:#827089">Background</h2>
+            <div class="hover-area-right">
+                <div class="text-container" style="background: linear-gradient(to left, rgba(59,42,64,1),rgba(59,42,64,1),rgba(59,42,64,0));float: right;box-shadow: -20px 58px 5px rgba(0,0,0,0.4);">
+                    <a href ="violet/6.jpg"><img src="violet/6.jpg" width="316" height="319" style="float:right;margin-left:0px;"></a>
+                    <div class="bubble">
+                        <p> Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Правый блок усё -->
+
+        <!-- Левый блок -->
+        <div class="left-block"style="border: 0px solid #f00;float: left;min-height: 500px;">
+            <h2 style="color:#827089">Итоги</h2>
+            <div class="hover-area-left">
+                <div class="text-container" style="background: linear-gradient(to right, rgba(59,42,64,1),rgba(59,42,64,1),rgba(59,42,64,0));">
+                    <a href ="violet/char_violet1.png"><img src="violet/char_violet1.png" width="318" height="324" style="float:left;margin-right: 20px;"></a>
+                    <div class = "bubble">
+                        <p> Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Левый блок усё-->
+
+    </section>
+    <!-- Опа, блоки закончились -->
+
+
+    <!-- А тут сидит нижняя шапка, стиль которой прописан прямо здесь, вручную -->
+    <div style="background-color: #000000; height: 80px; width: 100%; display:inline-flex;box-shadow: 0px -10px 3px rgba(0,0,0,0.1)">
+        <!-- Кнопка для vk -->
+        <div style="background: linear-gradient(to right,rgba(45,94,146,1),rgba(49,92,136,1));width: 50%;position: relative;height: 100%;margin-top:">
+            <a href="https://vk.com/droillex" style="text-decoration: none;color: #ffffff">
+                <div style="position: relative;margin-top: 10px;margin-left: 30%">
+                    <img src="violet/vk.png" height="60px" width="60px">
+                    <p style="font: bold 40px Play;position: absolute;margin-top: 8px;margin-left: 2%">СТРАНИЦА VK</p>
+                </div>
+            </a>
+        </div>
+        <!-- Кнопка для vk закончилась -->
+
+        <!-- Кнопка для discord -->
+        <div style="background: linear-gradient(to right,rgba(150,168,255,1),rgba(100,116,204,1));width: 50%;position: relative;height: 100%;margin-top:">
+            <a href="https://discord.gg/" style="text-decoration: none;color: #ffffff">
+                <div style="position: relative;margin-top: 10px;margin-left: 30%">
+                    <img src="violet/dc.png" height="60px" width="60px">
+                    <p style="font: bold 40px Play;position: absolute;margin-top: 8px;margin-left: 2%">СЕРВЕР DISCORD</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- Кнопка для discord'a закончилась -->
+</body>
+</html>
